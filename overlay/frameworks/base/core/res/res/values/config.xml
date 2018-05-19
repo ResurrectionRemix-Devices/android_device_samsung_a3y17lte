@@ -89,6 +89,8 @@
    <!-- Doze: should the TYPE_PICK_UP_GESTURE sensor be used as a pulse signal. -->
    <bool name="config_dozePulsePickup">true</bool>
 
+    <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_enableSmartPixels">true</bool>
 </resources>
 
  
