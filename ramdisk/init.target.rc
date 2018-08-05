@@ -72,9 +72,6 @@ on post-fs
     chown system system /dev/gnss_ipc
 
 on boot
-    
-    chmod 755 /sys/kernel/debug
-    chown system system /sys/kernel/debug
 
     # Disable touch input booster // USELESS BATTERY DRAIN
     write /sys/class/input_booster/level 0
