@@ -72,11 +72,10 @@ void vendor_load_properties()
 	if (platform != ANDROID_TARGET)
 		return;
 
-	if (bootloader.find("A320F") != std::string::npos) {
-
-	    /* SM-A320F */
-        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-A320F");
-        property_override_dual("ro.product.device", "ro.vendor.product.device", "a3y17ltexx");
+	if (bootloader.find("A320FL") != std::string::npos) {
+        	    /* SM-A320FL */
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-A320FL");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "a3xeltexc");
 
     } else if (bootloader.find("A320Y") != std::string::npos) {
 
@@ -84,11 +83,11 @@ void vendor_load_properties()
         property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-A320Y");
         property_override_dual("ro.product.device", "ro.vendor.product.device", "a3y17ltelk");
 
-    } else if (bootloader.find("A320FL") != std::string::npos) {
+    } else if (bootloader.find("A320F") != std::string::npos) {
 
-	    /* SM-A320FL */
-        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-A320FL");
-        property_override_dual("ro.product.device", "ro.vendor.product.device", "a3xeltexc");
+	    /* SM-A320F */
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-A320F");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "a3y17ltexx");
 
 
     }
