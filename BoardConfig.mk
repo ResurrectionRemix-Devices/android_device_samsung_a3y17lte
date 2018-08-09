@@ -17,7 +17,8 @@
 TARGET_OTA_ASSERT_DEVICE := a3y17lte,a3y17ltexc,a3y17ltexx,a3y17ltelk
 
 # Inherit from Exynos7870-common
--include device/samsung/exynos7870-common/BoardConfigCommon.mk
+include device/samsung/exynos7870-common/BoardConfigCommon.mk
+>>>>>>> a3/lineage-15.1
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_a3y17lte
@@ -32,7 +33,7 @@ TARGET_COPY_OUT_VENDOR := system/vendor
 # SELinux
 BOARD_SEPOLICY_DIRS += device/samsung/a3y17lte/sepolicy
 
-# Manifest
+# Hidl
 DEVICE_MANIFEST_FILE := device/samsung/a3y17lte/configs/manifest/manifest.xml
 
 # Properties
