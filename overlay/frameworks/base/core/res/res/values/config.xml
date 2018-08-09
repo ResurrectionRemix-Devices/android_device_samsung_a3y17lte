@@ -86,9 +86,11 @@
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently in hardware. -->
     <bool name="config_nightDisplayAvailable">true</bool>
 
-   <!-- Doze: should the TYPE_PICK_UP_GESTURE sensor be used as a pulse signal. -->
-   <bool name="config_dozePulsePickup">true</bool>
+    <!-- Doze: should the TYPE_PICK_UP_GESTURE sensor be used as a pulse signal. -->
+    <bool name="config_dozePulsePickup">true</bool>
 
+    <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_enableSmartPixels">true</bool>
 </resources>
 
  

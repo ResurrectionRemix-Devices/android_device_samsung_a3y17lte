@@ -1,7 +1,5 @@
-#!/sbin/sh
 #
-# Copyright (C) 2009 The Android Open Source Project
-# Copyright (c) 2011-2013, The Linux Foundation. All rights reserved.
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,15 +14,18 @@
 # limitations under the License.
 #
 
-systemp=$(cat tmp/recovery.log | grep "/system |" | cut -d "|" -f 2)
-mount $systemp /system
+# Inherit device configuration
+$(call inherit-product, device/samsung/a3y17lte/device.mk)
 
-getprop=`getprop ro.bootloader`
-variant=`echo $getprop | cut -c1-6`
+# Inherit from those products. Most specific first
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-if [ $variant = "A320FL" ]
-then
-    rm /system/etc/libnfc-sec-hal.conf
-    mv /system/etc/libnfc-sec-hal.conf.s3nrn80 system/etc/libnfc-sec-hal.conf
-fi
-exit 0
+# Inherit some common Lineage stuff
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
+# Device identifier
+PRODUCT_NAME := lineage_a3y17lte
+PRODUCT_DEVICE := a3y17lte
+PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_GMS_CLIENTID_BASE := android-samsung

@@ -19,15 +19,7 @@ LOCAL_PATH := device/samsung/a3y17lte
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # include splitted configs
--include $(LOCAL_PATH)/configs/product/audio.mk
--include $(LOCAL_PATH)/configs/product/fingerprint.mk
--include $(LOCAL_PATH)/configs/product/graphics.mk
--include $(LOCAL_PATH)/configs/product/light.mk
--include $(LOCAL_PATH)/configs/product/nfc.mk
--include $(LOCAL_PATH)/configs/product/permissions.mk
--include $(LOCAL_PATH)/configs/product/snap.mk
--include $(LOCAL_PATH)/configs/product/specific-ramdisk.mk
--include $(LOCAL_PATH)/configs/product/wifi.mk
+-include $(LOCAL_PATH)/configs/product/*.mk
 
 # Inherit from Exynos7870-common
 $(call inherit-product, device/samsung/exynos7870-common/device-common.mk)
@@ -36,7 +28,7 @@ $(call inherit-product, device/samsung/exynos7870-common/device-common.mk)
 $(call inherit-product, vendor/samsung/a3y17lte/a3y17lte-vendor.mk)
 
 # Dalvik heap
-$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk) 
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 # call the common proprietary setup
 $(call inherit-product, vendor/samsung/exynos7870-common/exynos7870-common-vendor.mk)
